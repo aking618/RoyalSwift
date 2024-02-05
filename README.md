@@ -14,16 +14,16 @@
 
 <p>
 
-  [![Swift Version Compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FCypherPoet%2FMyLibraryName%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/CypherPoet/MyLibraryName)
-
-  [![Swift Platform Compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FCypherPoet%2FMyLibraryName%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/CypherPoet/MyLibraryName)
+<!--  [![Swift Version Compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Faking618%2FRoyalSwift%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/aking618/RoyalSwift)-->
+<!---->
+<!--  [![Swift Platform Compatibility](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Faking618%2FRoyalSwift%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/aking618/RoyalSwift)-->
 
 </p>
 
 
 <p>
     <img src="https://img.shields.io/badge/License-MIT-blue.svg" />
-    <img src="https://github.com/CypherPoet/MyLibraryName/workflows/Build%20&%20Test/badge.svg" />
+    <img src="https://github.com/aking618/RoyalSwift/workflows/Build%20&%20Test/badge.svg" />
     <a href="https://github.com/apple/swift-package-manager">
       <img src="https://img.shields.io/badge/spm-compatible-brightgreen.svg?style=flat" />
     </a>
@@ -44,7 +44,7 @@ _[ A brief synopsis of this library ]._
 
 ### Xcode Projects
 
-Select `File` -> `Swift Packages` -> `Add Package Dependency` and enter `https://github.com/CypherPoet/MyLibraryName`.
+Select `File` -> `Swift Packages` -> `Add Package Dependency` and enter `https://github.com/aking618/RoyalSwift`.
 
 ### Swift Package Manager Projects
 
@@ -55,7 +55,7 @@ let package = Package(
     //...
     dependencies: [
         .package(
-            url: "https://github.com/CypherPoet/MyLibraryName",
+            url: "https://github.com/aking618/RoyalSwift",
             exact: "0.0.1"
         ),
     ],
@@ -63,61 +63,20 @@ let package = Package(
 )
 ```
 
-<!-- 🔑 UNCOMMENT THE INSTRUCTIONS BELOW IF THE GITHUB REPO NAME MATCHES THE PACKAGE NAME 👇 -->
-
-<!--
-
-From there, refer to `MyLibraryName` as a "target dependency" in any of _your_ package's targets that need it.
+From there, refer to `RoyalSwift` as a "target dependency" in any of _your_ package's targets that need it.
 
 ```swift
 targets: [
     .target(
         name: "YourLibrary",
         dependencies: [
-          "MyLibraryName",
+          "RoyalSwift",
         ],
         ...
     ),
     ...
 ]
 ```
-
--->
-
-<!-- 🔑 UNCOMMENT THE INSTRUCTIONS BELOW IF THE GITHUB REPO NAME DOESN'T MATCH THE PACKAGE NAME 👇 -->
-
-From there, refer to the `MyLibraryName` "product" delivered by the `MyPackageName` "package" inside of any of your project's target dependencies:
-
-```swift
-targets: [
-    .target(
-        name: "YourLibrary",
-        dependencies: [
-            .product(
-                name: "MyLibraryName",
-                package: "MyPackageName"
-            ),
-        ],
-        ...
-    ),
-    ...
-]
-```
-
-<!-- Proceed from above choice accordingly (and delete this comment) -->
-
-Then simply `import MyLibraryName` wherever you’d like to use it.
-
-<!--
-    🔑 UNCOMMENT THE INSTRUCTIONS BELOW IF USING THE `@_exported` feature
-    might be handy. 👇
--->
-
-<!-- **📝 Note:** To make the library available to your entire project, you could also leverage the [functionality of the `@_exported` keyword](https://forums.swift.org/t/package-manager-exported-dependencies/11615) by placing the following line somewhere at the top level of your project:
-
-```swift
-@_exported import MyLibraryName
-``` -->
 
 ## Usage
 
@@ -129,7 +88,7 @@ Then simply `import MyLibraryName` wherever you’d like to use it.
 
 ### Requirements
 
-- Xcode 14.0+
+- Xcode 15.0+
 
 ### ✍️ Building The Documentation
 
@@ -141,13 +100,4 @@ If you're using VSCode, there's also a [task configuration](./.vscode/tasks.json
 
 ## 🏷 License
 
-`MyPackageName` is available under the MIT license. See the [LICENSE file](./LICENSE) for more info.
-
-## Steps For Using This Template
-
-- [ ] Rename instances of `MyLibraryName` to the library's product name.
-- [ ] Rename files and directories with names of `MyLibraryName` to the library's product name.
-- [ ] Rename instances of `MyPackageName` to the library's Swift package name.
-- [ ] Update supported platforms in `Package.swift` and in this README's badges as appropriate.
-- [ ] Replaces instances of `[ A brief synopsis of this library ]` with the library's short description.
-- [ ] Delete this section.
+`RoyalSwift` is available under the MIT license. See the [LICENSE file](./LICENSE) for more info.
