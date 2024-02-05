@@ -18,9 +18,9 @@ jobs:
 
       - uses: fwcd/swift-docc-action@v1.0.2
         with:
-          target: MyLibraryName
+          target: RoyalSwift
           output: ./docs
-          hosting-base-path: MyLibraryName
+          hosting-base-path: RoyalSwift
           disable-indexing: "true"
           transform-for-static-hosting: "true"
 
