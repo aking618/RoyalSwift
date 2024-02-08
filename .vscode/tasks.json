@@ -10,14 +10,14 @@
         "--disable-sandbox",
         "preview-documentation",
         "--target",
-        "MyLibraryName"
+        "RoyalSwift"
       ],
       "options": {
         "cwd": "${workspaceFolder}"
       },
       "problemMatcher": ["$swiftc"],
-      "label": "swift: Preview Documentation for `MyLibraryName`",
-      "detail": "Preview DocC Documentation for the `MyLibraryName` target"
+      "label": "swift: Preview Documentation for `RoyalSwift`",
+      "detail": "Preview DocC Documentation for the `RoyalSwift` target"
     }
   ]
 }

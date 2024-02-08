@@ -35,7 +35,7 @@
 
 <p align="center">
 
-_[ A brief synopsis of this library ]._
+Royal Swift is a utility package that includes any classes, structs, enum, or extension that I have written and found useful!
 
 </p>
 
@@ -48,7 +48,7 @@ Select `File` -> `Swift Packages` -> `Add Package Dependency` and enter `https:/
 
 ### Swift Package Manager Projects
 
-You can add `MyPackageName` as a package dependency in your `Package.swift` file:
+You can add `RoyalSwift` as a package dependency in your `Package.swift` file:
 
 ```swift
 let package = Package(
