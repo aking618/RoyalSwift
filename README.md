@@ -100,4 +100,4 @@ If you're using VSCode, there's also a [task configuration](./.vscode/tasks.json
 
 ## 🏷 License
 
-`RoyalSwift` is available under the MIT license. See the [LICENSE file](./LICENSE) for more info.
+`RoyalSwift` is available under the MIT license. See the [LICENSE file](./LICENSE.md) for more info.
