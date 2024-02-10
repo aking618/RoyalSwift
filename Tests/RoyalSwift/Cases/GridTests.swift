@@ -9,7 +9,7 @@ import XCTest
 
 @testable import RoyalSwift
 
-class NodeTests: XCTestCase {
+class GridTests: XCTestCase {
     
     func testAStarDistanceNoObstaclesOrDiganals() async {
         let grid = [
@@ -18,8 +18,11 @@ class NodeTests: XCTestCase {
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ]
-        let startNode = Node(parent: nil, point: (x: 0, y: 0))
-        let distance = await startNode.aStarDistance(to: (x: 4, y: 3), grid: grid)
+        
+        let aStarGrid = Grid(values: grid)
+        let start = (x: 0, y: 0)
+        let destination = (x: 4, y: 3)
+        let distance = await aStarGrid.aStarDistance(from: start, to: destination)
         XCTAssertEqual(distance, 7, "A* distance with diagonals is incorrect")
     }
     
@@ -30,8 +33,11 @@ class NodeTests: XCTestCase {
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0]
         ]
-        let startNode = Node(parent: nil, point: (x: 0, y: 0))
-        let distance = await startNode.aStarDistance(to: (x: 4, y: 3), grid: grid, allowDiagonals: true)
+        
+        let aStarGrid = Grid(values: grid)
+        let start = (x: 0, y: 0)
+        let destination = (x: 4, y: 3)
+        let distance = await aStarGrid.aStarDistance(from: start, to: destination, allowDiagonals: true)
         XCTAssertEqual(distance, 4, "A* distance with diagonals is incorrect")
     }
     
@@ -42,8 +48,11 @@ class NodeTests: XCTestCase {
             [0, 0, 1, 0, 0],
             [0, 0, 0, 0, 0]
         ]
-        let startNode = Node(parent: nil, point: (x: 0, y: 0))
-        let distance = await startNode.aStarDistance(to: (x: 3, y: 3), grid: grid, allowDiagonals: true, obstacle: 1)
+        
+        let aStarGrid = Grid(values: grid)
+        let start = (x: 0, y: 0)
+        let destination = (x: 3, y: 3)
+        let distance = await aStarGrid.aStarDistance(from: start, to: destination, allowDiagonals: true, obstacle: 1)
         XCTAssertEqual(distance, 4, "A* distance with diagonals is incorrect")
     }
 
@@ -54,8 +63,11 @@ class NodeTests: XCTestCase {
             [0, 0, 1, 0, 0],
             [0, 0, 0, 0, 0]
         ]
-        let startNode = Node(parent: nil, point: (x: 0, y: 0))
-        let distance = await startNode.aStarDistance(to: (x: 3, y: 3), grid: grid)
+        
+        let aStarGrid = Grid(values: grid)
+        let start = (x: 0, y: 0)
+        let destination = (x: 3, y: 3)
+        let distance = await aStarGrid.aStarDistance(from: start, to: destination)
         XCTAssertEqual(distance, 6, "A* distance without diagonals is incorrect")
     }
 
@@ -66,8 +78,11 @@ class NodeTests: XCTestCase {
             [0, 0, 1, 0, 0],
             [0, 0, 0, 0, 0]
         ]
-        let startNode = Node(parent: nil, point: (x: 0, y: 0))
-        let distance = await startNode.aStarDistance(to: (x: 3, y: 3), grid: grid, obstacle: 1)
+        
+        let aStarGrid = Grid(values: grid)
+        let start = (x: 0, y: 0)
+        let destination = (x: 3, y: 3)
+        let distance = await aStarGrid.aStarDistance(from: start, to: destination, obstacle: 1)
         XCTAssertEqual(distance, 6, "A* distance with obstacle should return 6")
     }
     
@@ -78,8 +93,11 @@ class NodeTests: XCTestCase {
             [0, 0, 1, 0, 0],
             [0, 0, 1, 0, 0]
         ]
-        let startNode = Node(parent: nil, point: (x: 0, y: 0))
-        let distance = await startNode.aStarDistance(to: (x: 3, y: 3), grid: grid, obstacle: 1)
+        
+        let aStarGrid = Grid(values: grid)
+        let start = (x: 0, y: 0)
+        let destination = (x: 3, y: 3)
+        let distance = await aStarGrid.aStarDistance(from: start, to: destination, obstacle: 1)
         XCTAssertEqual(distance, -1, "A* distance with destination blocked should be -1")
     }
 }
