@@ -9,8 +9,9 @@ public typealias Point = (x: Int, y: Int)
 
 /// Represents a 2-dimenional array of values.
 public class Grid<T:Equatable> {
-    var values: [[T]]
     
+    /// Values represent by the gird.
+    public var values: [[T]]
     
     /// Initializes a grid that represents a 2D array of Equatables.
     /// - Parameter values: 2D array of Equatables to represent as a grid.
