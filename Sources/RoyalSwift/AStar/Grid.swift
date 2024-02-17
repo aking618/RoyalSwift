@@ -5,18 +5,28 @@
 //  Created by Ayren King on 2/9/24.
 //
 
+import Foundation
+
 public typealias Point = (x: Int, y: Int)
 
 /// Represents a 2-dimenional array of values.
 public class Grid<T:Equatable> {
     
     /// Values represent by the gird.
-    public var values: [[T]]
+    public var values: [[T]] {
+        didSet {
+            visualGridValues = Array(repeating: Array(repeating: 0, count: values.first?.count ?? 0), count: values.count)
+        }
+    }
+    
+    /// Values representing the grid's spaces f values
+    public var visualGridValues: [[Int]]
     
     /// Initializes a grid that represents a 2D array of Equatables.
     /// - Parameter values: 2D array of Equatables to represent as a grid.
     public init(values: [[T]]) {
         self.values = values
+        self.visualGridValues = Array(repeating: Array(repeating: 0, count: values.first?.count ?? 0), count: values.count)
     }
     
     /// Calculates the A* distance between the start node and the destination point on the grid.
@@ -26,12 +36,14 @@ public class Grid<T:Equatable> {
     ///   - destination: The destination point to calculate the distance to.
     ///   - allowDiagonals: A Boolean value indicating whether diagonal movement is allowed.
     ///   - obstacle: An optional obstacle element in the grid.
+    ///   - delay: An optional delay to update `visualGridValues`.
     /// - Returns: The A* distance between the start node and the destination point. Returns -1 if no path is found.
     public func aStarDistance(
         from start: Point,
         to destination: Point,
         allowDiagonals: Bool = false,
-        obstacle: T? = nil
+        obstacle: T? = nil,
+        delay: Duration? = nil
     ) async -> Int {
         let startNode = Node(parent: nil, point: start)
         let endNode = Node(parent: nil, point: destination)
@@ -78,6 +90,13 @@ public class Grid<T:Equatable> {
                 children[childIndex].g = currentNode.g + 1
                 children[childIndex].h = (point.x - endNode.point.x).squared + (point.y - endNode.point.y).squared
                 children[childIndex].f = children[childIndex].g + children[childIndex].h
+                
+                let child = children[childIndex]
+                visualGridValues[child.point.x][child.point.y] = child.f
+                
+                if let delay {
+                    try? await Task.sleep(for: delay)
+                }
 
                 guard !openList.contains(children[childIndex]) else { continue }
 
